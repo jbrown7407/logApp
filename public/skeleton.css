@@ -158,9 +158,9 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1EAEDB; }
+  color: #100975; }
 a:hover {
-  color: #0FA0CE; }
+  color: rgb(0, 0, 0); }
 
 
 /* Buttons
@@ -182,9 +182,10 @@ input[type="button"] {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  background-color: transparent;
+  background-color: white;
+
   border-radius: 4px;
-  border: 1px solid #bbb;
+  border: 1px solid black;
   cursor: pointer;
   box-sizing: border-box; }
 .button:hover,
@@ -206,8 +207,8 @@ input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #FFF;
-  background-color: #33C3F0;
-  border-color: #33C3F0; }
+  background-color: #002fff;
+  border-color: #000000; }
 .button.button-primary:hover,
 button.button-primary:hover,
 input[type="submit"].button-primary:hover,
@@ -219,7 +220,7 @@ input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
-  background-color: #1EAEDB;
+  background-color: #000000;
   border-color: #1EAEDB; }
 
 

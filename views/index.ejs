@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <title></title>
     </head>
-    <link rel="stylesheet" href="/normalize.css">
+    <!-- <link rel="stylesheet" href="/normalize.css"> -->
     <link rel="stylesheet" href="/skeleton.css">
     <link rel="stylesheet" href="/style.css">
     
     <body>
         <div class="container">
-            <div class="banner">     <h1>Captain's Log</h1></div>
+            <div class="banner">    </div>
 
         <ul>
             <% for(let i = 0; i < allMessages.length; i++) { %>
@@ -23,19 +23,19 @@
                 <li>
                      
                 <%    if (i%2) {  %>
-                    <img src="icon2.png" style="float:right" alt="Avatar">
+                    <img src="icon2.png" style="float:right" alt="i%2 =true">
                  <%    } else { %>
-                    <img src="messageApp/images/personicon1.png" style="float:right" alt="Avatar">
+                    <img src="icon3.png" style="float:right" alt="i%2 =false">
               <%   }  %>
 
 
                     
                 User:
-                <a href="/messages/<%=allMessages[i].id %>">
+                <a href="/messages/<%=allMessages[i].id %>"> <span class="time-right">   <%=allMessages[i].createdAt; %> </span>
                     <%=allMessages[i].user; %> <br>
                 </a>
                 Message:  <%=allMessages[i].message; %>.  <a href="/messages/<%=allMessages[i].id %>/edit">Edit</a>
-            <br>  <span class="time-left">   <%=allMessages[i].createdAt; %> </span>
+            <br>  
                 
             
                 <form action="/messages/<%= allMessages[i].id %>?_method=DELETE" method="POST">
@@ -48,18 +48,28 @@
             
             <% } %>
         </ul>
+       <div class="navbarTop">
+       <h2> <a href="/messages/">Home</a>
+        <a href="#news">Contacts</a>
+        <a href="#contact">Preferences</a>
+        <a href="/messages/boards">Change Boards</a></h2>
+       
+       </div>
+    </nav>
+        <div class="navbar">
 
-        <nav id="navbar">
-            <h1>New Message</h1>
-            <form action="/messages" method="POST">
+      <br>
+            <form action="/messages" method="POST" >
                 User: <input type="text" name="user" /><br/>
                 Message: <input type="text" name="message" /><br/>
                 <!-- SuperUser: <input type="checkbox" name="superUser" /><br/> -->
                 <input type="submit" name="" value="Send Message"/> <br>
-          <br>  <a href="/messages/boards">Change Boards</a>
-          </nav>
+    
           </div>
-
           
+      
+
+
+
     </body>
 </html>
