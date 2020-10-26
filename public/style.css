@@ -47,6 +47,13 @@ form:-ms-input-placeholder {
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
+
+
+    word-wrap: break-word;
+    overflow: break-word;
+    word-wrap: break-word;
+    display: break-word;
+ 
  
   }
   
@@ -54,6 +61,10 @@ form:-ms-input-placeholder {
   .darker {
     border-color: #ccc;
     background-color: #ddd;
+    word-wrap: break-word;
+    overflow: break-word;
+    word-wrap: break-word;
+    display: break-word;
   }
   
   /* Clear floats */
