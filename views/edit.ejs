@@ -10,18 +10,15 @@
     <body>
        <div class="container">
         <div class="banner">     <h1>Edit Log</h1></div>
-        <form action="/fruits/<%=fruit.id%>?_method=PUT" method="POST">
-    		  <!--  NOTE: the form is pre-populated with values for the server-->
-    		  Name: <input type="text" name="name" value="<%=fruit.name%>"/><br/>
-    		  Color: <input type="text" name="color" value="<%=fruit.color%>"/><br/>
-    		  Is Ready To Eat:
-            <input type="checkbox" name="readyToEat"
-                <% if(fruit.readyToEat === true) { %>
-                    checked
-                <% } %>
-            />
-            <br/>
-            <input type="submit" name="" value="Submit Changes"/>
+        <form action="/fruits/<%=messages.id%>?_method=PUT" method="POST">
+            <div class="banner">     <h1>New Message Page</h1></div>
+            <form action="/messages" method="POST">
+                <%=users.name %> <br>
+                Message: <input type="text" name="message" /><br/>
+             
+                <input type="submit" name="" value="Submit Changes"/>
+            </form>
+           
         </form>
     </div>    
     </body>
