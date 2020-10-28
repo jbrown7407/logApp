@@ -5,6 +5,10 @@
 //npm i mongoose
 ///DELETE npm i method-override
 
+//npm install express-session
+//npm install dotenv
+
+
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
@@ -19,10 +23,6 @@ const methodOverride = require('method-override')
 ///
 
 // app.use(express.urlencoded({extended: false})); //  recognize the incoming object as strings or arrays.
-
-
-
-
 
 app.use(express.json());  // allows us to recognize the incoming request as a JSON object. 
 app.use(express.urlencoded({extended: false})); //  recognize the incoming object as strings or arrays.
@@ -94,7 +94,8 @@ app.post('/messages/', (req, res)=>{    //Post is an express method to POST
 /////////////
 /// edit ////
 /////////////
-app.get('/messages/:id/edit', (req, res)=>{
+// app.get('/messages/:id/edit', (req, res)=>{
+  app.get('/messages/:id/edit', (req, res)=>{
   Message.findById(req.params.id, (err, foundMessage)=>{ //find the Message
       res.render('edit.ejs', 
         { message: foundMessage, //pass in found message 
