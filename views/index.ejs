@@ -5,12 +5,12 @@
         <title></title>
     </head>
     <!-- <link rel="stylesheet" href="/normalize.css"> -->
-    <link rel="stylesheet" href="/skeleton.css">
+    <!-- <link rel="stylesheet" href="/skeleton.css"> -->
     <link rel="stylesheet" href="/style.css">
     
     <body>
         <div class="container">
-            <div class="banner">    </div>
+          
 
         <ul>
             <% for(let i = 0; i < allMessages.length; i++) { %>
@@ -21,7 +21,7 @@
                  <%   }  %>
                
                 <li>
-         <!-- LI PRINTED EACH LOOP stable             -->
+         <!-- LI PRINTED EACH LOOP             -->
                 <%    if (i%2) {  %>
                     <img src="icon2.png" style="float:left" alt="i%2 =true">
                  <%    } else { %>
@@ -34,20 +34,13 @@
                 <a href="/messages/<%=allMessages[i].id %>"> <span class="time-right">   <%=allMessages[i].createdAt; %> </span>
                     <%=allMessages[i].user; %>: 
                 </a> <br>
-                Message:  <%=allMessages[i].message; %>.  <a href="/messages/<%=allMessages[i].id %>/edit">Edit</a>
+                Message:  <%=allMessages[i].message; %>.  <a href="/messages/<%=allMessages[i].id %>/edit">Edit</a>  <br>
             <br>  
                 
-            <div class="dropdown">
-                <button class="dropbtn">Dropdown</button>
-                <div class="dropdown-content">
-                  <a href="#"><form action="/messages/<%= allMessages[i].id %>?_method=DELETE" method="POST">
+            
+                <form action="/messages/<%= allMessages[i].id %>?_method=DELETE" method="POST">
                     <input type="submit" value="DELETE"/>
-                </form></a>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a>
-                </div>
-              </div>
-                
+                </form>
                
                 
             </li>
@@ -68,9 +61,10 @@
       <br>
             <form action="/messages" method="POST" >
                 User: <input type="text" name="user" /><br/>
-                Message: <input type="text" name="message" /><br/>
+                Message: <input type="text" name="message" /> <span class="highlighter">  
+                      <input type="submit" name="" value="Send"/></span>  
                 <!-- SuperUser: <input type="checkbox" name="superUser" /><br/> -->
-        <span class="highlighter">    <input type="submit" name="" value="Send Message"/></span>     <br>
+
     
           </div>
           
