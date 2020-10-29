@@ -40,26 +40,26 @@ const PORT = process.env.PORT || 3000;
 //Database
 //___________________
 // How to connect to the database either via heroku or locally
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/'+ 'messages';
+ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/'+ 'messages';
 
 // Connect to Mongo
-mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true});
+mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true, useUnifiedTopology: true });
 
 ////////
 // Error / success
-db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
-db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
-db.on('disconnected', () => console.log('mongo disconnected'));
+// db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
+// db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
+// db.on('disconnected', () => console.log('mongo disconnected'));
 
-// open the connection to mongo
-db.on('open' , ()=>{});
+// // open the connection to mongo
+// db.on('open' , ()=>{});
 ////////
 ////////
 
 
 
 // mongoose connection logic
-mongoose.connect('mongodb://localhost:27017/messageCRUD', { useNewUrlParser: true, useUnifiedTopology: true } );
+// mongoose.connect('mongodb://localhost:27017/messageCRUD', { useNewUrlParser: true, useUnifiedTopology: true } );
 mongoose.connection.once('open', ()=> {
     console.log('connected to mongo');
 });
