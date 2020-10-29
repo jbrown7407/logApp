@@ -1,14 +1,15 @@
-{"engines" : {
-  "node":"15.0.1"
-},
+
 
 {
-  "name": "fruit_app",
+  "name": "mymessageapp7407",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
+  },
+  "engines": {
+    "node":"15.0.1"
   },
   "keywords": [],
   "author": "",
@@ -29,4 +30,4 @@
   },
   "homepage": "https://github.com/jbrown7407/messageApp#readme",
   "description": ""
-}}
+}
