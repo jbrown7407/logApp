@@ -83,7 +83,7 @@ app.get('/messages', (req, res)=>{
 
 app.get('/', (req, res)=>{   //INITIAL LOGIN
  
-    res.redirect('/messages/login')
+    res.redirect('/messages')
 
 })
 
